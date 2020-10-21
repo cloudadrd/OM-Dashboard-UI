@@ -69,7 +69,6 @@ const user = {
 
             result.perms = perms
             result.roles = result.roles.map(r => r instanceof String ? r : r.name)
-
             commit('SET_ROLES', { roles: result.roles, perms })
             commit('SET_INFO', result)
           } else {

@@ -102,14 +102,18 @@
                 :colon="false"
                 :labelCol="{lg: { span: 8 }, sm: { span: 8 }}"
                 :wrapperCol="{lg: { span: 8 }, sm: { span: 8 } }">
-                Show a maximun ad 1ad per <a-input-number
+                Show a maximun ad 1ad per
+                <a-input-number
                   type="number"
                   :disabled="!record.editStatus"
                   size="small"
                   :min="0"
                   :max="1440"
                   style="width:66px;"
-                  v-decorator="['frequencyInterval',{initialValue: record.frequencyInterval}]"/> minute(s)
+                  v-decorator="['frequencyInterval',{initialValue: record.frequencyInterval}]"
+                />
+                <!-- minute(s) -->
+                second(s)
               </a-form-item>
               <a-form-item
                 style="margin-bottom: 0px;"
@@ -160,6 +164,14 @@
                     <a-select-option v-for="d in deviceData" :key="d.value">{{ d.text }}</a-select-option>
                   </a-select>
                 </a-input-group>
+              </a-form-item>
+              <a-form-item
+                style="margin-bottom: 0px;"
+                label="Custom Close"
+                :colon="false"
+                :labelCol="{lg: { span: 8 }, sm: { span: 8 }}"
+                :wrapperCol="{lg: { span: 8 }, sm: { span: 8 } }">
+                <a-input placeholder="c" v-decorator="[record.id+'c', {initialValue: record.c}]"/>
               </a-form-item>
             </p>
             <span slot="status" slot-scope="text, record">

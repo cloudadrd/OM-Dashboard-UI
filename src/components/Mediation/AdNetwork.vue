@@ -1,6 +1,7 @@
 <template>
   <div :style="status?null:'opacity: 0.3;'">
-    <img :src="'/logo/'+className + '.svg'"/>
+    <span v-text="className"></span>
+    <!-- <img :src="'/logo/'+className + '.svg'"/> -->
   </div>
 </template>
 

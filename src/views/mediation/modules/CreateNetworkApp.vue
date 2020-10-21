@@ -28,6 +28,10 @@
     <om-form label="Reporting API ID" :fill="false" :edit="canEdit" field="reportAppId" tip="From the <a target=&quot;_blank&quot; href=&quot;https://dashboard.vungle.com/dashboard/accounts/details&quot;>Vungle Details Dashboard</a>, find your Reporting API ID towards the bottom of the page. If you do not already have a Report ID, email Vungle at account-managers@vungle.com to request one." />
     <om-form label="Reporting API Key" :fill="false" :edit="canEdit" field="apiKey" tip="From the <a target=&quot;_blank&quot; href=&quot;https://dashboard.vungle.com/dashboard/accounts/details&quot;>Vungle Details Dashboard</a>, select your application. On the next page, find the Reporting API Key in the Application Details column." />
   </div>
+  <div v-else-if="id===6">
+    <!-- TencentAds -->
+    <om-form label="APP ID" :edit="canEdit" field="adnAppKey" tip="From this <a target=&quot;_blank&quot; href=&quot;http://adnet.qq.com/medium/list&quot;>Medium</a> page to get your App ID" />
+  </div>
   <div v-else-if="id===7">
     <!-- AdColony -->
     <om-form label="APP ID" :edit="canEdit" field="adnAppKey" tip="Your API key will be labeled as &quot;Read-Only API Key&quot; on <a target=&quot;_blank&quot; href=&quot;https://clients.adcolony.com/users/edit&quot;>this page</a>" />
@@ -67,15 +71,6 @@
     <om-form label="Report API SKey" :fill="false" :edit="canEdit" field="apiKey" :showTip="false" />
     <om-form label="Report API Secret" :fill="false" :edit="canEdit" field="clientSecret" :showTip="false" />
   </div>
-  <div v-else-if="id===6">
-    <!-- TencentAds -->
-    <om-form label="APP ID" :edit="canEdit" field="adnAppKey" tip="From this <a target=&quot;_blank&quot; href=&quot;http://adnet.qq.com/medium/list&quot;>Medium</a> page to get your App ID" />
-  </div>
-  <div v-else-if="id===9">
-    <!-- Mopub -->
-    <om-form label="API Key" :fill="false" :edit="canEdit" field="adnAppKey" tip="From the <a target=&quot;_blank&quot; href=&quot;https://app.mopub.com/reports/custom/&quot;>Reports page</a>, check &quot;Enable data access through API&quot;. Then click the &quot;View API Access Details&quot; link to reveal your API Key." />
-    <om-form label="Inventory Report ID" :fill="false" :edit="canEdit" field="apiKey" tip="From the <a target=&quot;_blank&quot; href=&quot;https://app.mopub.com/reports/custom/&quot;>Reports page</a>, click the &quot;View API Access Details&quot; link to reveal your Inventory Report ID." />
-  </div>
   <div v-else-if="id===15">
     <!-- IronSource -->
     <om-form label="App Key" :edit="canEdit" field="adnAppKey" tip="From this <a target=&quot;_blank&quot; href=&quot;https://platform.ironsrc.com/partners/applications&quot;>App Management</a> page to get your App Key" />
@@ -88,6 +83,52 @@
     <om-form label="Publisher ID" :fill="false" :edit="canEdit" field="apiKey" :showTip="false" />
     <om-form label="Consumer Key" :fill="false" :edit="canEdit" field="clientId" :showTip="false" />
     <om-form label="Consumer Secret" :fill="false" :edit="canEdit" field="clientSecret" :showTip="false" />
+  </div>
+  <div v-else-if="id===17">
+    <!-- Cloudmobi -->
+    <om-form label="Init ID" :edit="canEdit" field="adnAppKey" />
+  </div>
+  <div v-else-if="id===18">
+    <!-- DongFangTT -->
+    <om-form label="App Key" :edit="canEdit" field="adnAppKey" />
+    <om-form label="User Name" :fill="false" :edit="canEdit" field="clientId" />
+    <om-form label="Secret Key" :fill="false" :edit="canEdit" field="clientSecret" />
+  </div>
+  <div v-else-if="id===19">
+    <!-- TC -->
+    <om-form label="adnAppKey" :edit="canEdit" field="adnAppKey" />
+    <om-form label="apiKey" :fill="false" :edit="canEdit" field="apiKey" />
+    <om-form label="clientId" :fill="false" :edit="canEdit" field="clientId" />
+    <om-form label="clientSecret" :fill="false" :edit="canEdit" field="clientSecret" />
+  </div>
+  <div v-else-if="id===20">
+    <!-- Sigmob -->
+    <om-form label="adnAppKey" :fill="false" :edit="canEdit" field="adnAppKey" />
+    <om-form label="apiKey" :fill="false" :edit="canEdit" field="apiKey" />
+    <om-form label="clientId" :fill="false" :edit="canEdit" field="clientId" />
+    <om-form label="clientSecret" :fill="false" :edit="canEdit" field="clientSecret" />
+  </div>
+  <div v-else-if="id===21">
+    <!-- avazu -->
+    <om-form label="appID" :fill="false" :edit="canEdit" field="adnAppKey" />
+    <om-form label="pubKey" :fill="false" :edit="canEdit" field="apiKey" />
+  </div>
+  <div v-else-if="id===22">
+    <!-- 快手 -->
+    <om-form label="appID" :fill="false" :edit="canEdit" field="adnAppKey" />
+    <om-form label="appName" :fill="false" :edit="canEdit" field="clientId" />
+  </div>
+  <div v-else-if="id===23">
+    <!-- 瑞狮 -->
+    <om-form label="appID" :fill="false" :edit="canEdit" field="adnAppKey" />
+  </div>
+  <div v-else >
+    <om-form label="adnAppKey" :fill="false" :edit="canEdit" field="adnAppKey" />
+    <om-form label="apiKey" :fill="false" :edit="canEdit" field="apiKey" />
+    <om-form label="clientId" :fill="false" :edit="canEdit" field="clientId" />
+    <om-form label="clientSecret" :fill="false" :edit="canEdit" field="clientSecret" />
+    <om-form label="reportAppId" :fill="false" :edit="canEdit" field="reportAppId" />
+    <om-form label="refreshToken" :fill="false" :edit="canEdit" field="refreshToken" />
   </div>
 </template>
 <script>

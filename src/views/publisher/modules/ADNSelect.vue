@@ -13,7 +13,9 @@
       @change="handleChange">
       <a-select-option v-for="adn in optionList" :key="adn.id" :disabled="!adn.adNetworkAppId" :title="adn.className">
         <div class="selected-app-small">
-          <a-badge :status="adn.adNetworkAppId ? 'success':'default'" /><img style="height:24px;" :src="'/logo/'+adn.className + '.svg'">
+          <a-badge :status="adn.adNetworkAppId ? 'success':'default'" />
+          <span v-text="adn.className"></span>
+          <!-- <img style="height:24px;" :src="'/logo/'+adn.className + '.svg'"> -->
         </div>
       </a-select-option>
     </a-select>
@@ -28,7 +30,9 @@
       @change="handleChange">
       <a-select-option v-for="adn in optionList" :key="adn.id" :disabled="!adn.adNetworkAppId" :title="adn.className">
         <div class="selected-app-small">
-          <a-badge :status="adn.adNetworkAppId ? 'success':'default'" /><img style="height:24px;" :src="'/logo/'+adn.className + '.svg'">
+          <a-badge :status="adn.adNetworkAppId ? 'success':'default'" />
+          <span v-text="adn.className"></span>
+          <!-- <img style="height:24px;" :src="'/logo/'+adn.className + '.svg'"> -->
         </div>
       </a-select-option>
     </a-select>

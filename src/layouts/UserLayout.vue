@@ -4,7 +4,8 @@
       <div class="top">
         <div class="header">
           <a href="/">
-            <img src="/assets/logo.svg" class="logo" alt="logo">
+            <!-- <img src="/assets/logo.svg" class="logo" alt="logo"> -->
+            <h1>新蜂聚合</h1>
           </a>
         </div>
         <div class="desc">

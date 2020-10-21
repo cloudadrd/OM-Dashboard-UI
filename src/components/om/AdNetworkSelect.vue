@@ -17,7 +17,8 @@
       @change="handleChange">
       <a-select-option v-for="adn in optionList" :key="adn.id" :title="adn.className">
         <div class="selected-app-small">
-          <img style="height:24px;" :src="'/logo/'+adn.className + '.svg'">
+          <span v-text="adn.className"></span>
+          <!-- <img style="height:24px;" :src="'/logo/'+adn.className + '.svg'"> -->
         </div>
       </a-select-option>
     </a-select>

@@ -1,205 +1,215 @@
 <template>
   <div class="adn-app-create">
-    <div v-if="id===1">
-      <!-- AdTiming -->
-      <om-form
-        :form="form"
-        label="App Key"
-        :msg="$msg('appsettings.app_key')"
-        :edit="canEdit"
-        field="adnAppKey"
-      />
-    </div>
-    <div v-else-if="id===2">
-      <!-- AdMob -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.admob_app_id_tip')" />
-    </div>
-    <div v-else-if="id===3">
-      <!-- facebook -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.facebook_app_id_tip')" />
-      <om-form
-        :form="form"
-        label="System User Access Token"
-        :msg="$msg('appsettings.system_user_access_token')"
-        :edit="canEdit"
-        field="refreshToken"
-        :tip="$msg('appsettings.facebook_system_user_access_token_tip')" />
-    </div>
-    <div v-else-if="id===4">
-      <!-- UnityAds -->
-      <om-form
-        :form="form"
-        label="Game ID"
-        :msg="$msg('appsettings.game_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.unity_game_id_tip')" />
-    </div>
-    <div v-else-if="id===5">
-      <!-- Vungle -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.vungle_app_id_tip')" />
-    </div>
-    <div v-else-if="id===6">
-      <!-- TencentAds -->
-      <om-form
-        :form="form"
-        label="APP ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.gdt_app_id_tip')" />
-    </div>
-    <div v-else-if="id===7">
-      <!-- AdColony -->
-      <om-form
-        :form="form"
-        label="APP ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.adcolony_app_id_tip')" />
-    </div>
-    <div v-else-if="id===8">
-      <!-- AppLovin -->
-      <om-form
-        :form="form"
-        label="SDK Key"
-        :msg="$msg('appsettings.sdk_key')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.applovin_sdk_key_tip')" />
-    </div>
-    <div v-else-if="id===9">
-      <!-- Mopub -->
-    </div>
-    <div v-else-if="id===11">
-      <!-- Tapjoy -->
-      <om-form
-        :form="form"
-        label="SDK Key"
-        :msg="$msg('appsettings.sdk_key')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.tapjoy_sdk_key_tip')" />
-    </div>
-    <div v-else-if="id===12">
-      <!-- Chartboost -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="cb_left"
-        :tip="$msg('appsettings.chartboost_app_id_tip')" />
-      <om-form
-        :form="form"
-        label="App Signature"
-        :msg="$msg('appsettings.app_signature')"
-        :edit="canEdit"
-        field="cb_right"
-        :tip="$msg('appsettings.chartboost_app_signature_tip')" />
-    </div>
-    <div v-else-if="id===13">
-      <!-- Pangle -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :tip="$msg('appsettings.pangle_app_id_tip')"
-        :edit="canEdit"
-        field="adnAppKey"
-      />
-    </div>
-    <div v-else-if="id===14">
-      <!-- Mintegral -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :tip="$msg('appsettings.mintegral_app_id_tip')"
-        :edit="canEdit"
-        field="cb_left"
-      />
-      <om-form
-        :form="form"
-        label="App Key"
-        :msg="$msg('appsettings.app_key')"
-        :tip="$msg('appsettings.mintegral_app_key_tip')"
-        :edit="canEdit"
-        field="cb_right"
-      />
-    </div>
-    <div v-else-if="id===15">
-      <!-- IronSource -->
-      <om-form
-        :form="form"
-        label="App Key"
-        :msg="$msg('appsettings.app_key')"
-        :edit="canEdit"
-        field="adnAppKey"
-        :tip="$msg('appsettings.ironsource_app_key_tip')" />
-    </div>
-    <div v-else-if="id===16">
-      <!-- MyTarget -->
-    </div>
-    <div v-else-if="id===17">
-      <!-- Helium ChartboostBid -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="cb_left"
-        :tip="$msg('appsettings.chartboost_app_id_tip')" />
-      <om-form
-        :form="form"
-        label="App Signature"
-        :msg="$msg('appsettings.app_signature')"
-        :edit="canEdit"
-        field="cb_right"
-        :tip="$msg('appsettings.chartboost_app_signature_tip')" />
-    </div>
-    <div v-else-if="id===18">
-      <!-- xiaomi -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="cb_left" />
-      <om-form
-        :form="form"
-        label="App Secret"
-        :edit="canEdit"
-        field="cb_right" />
-    </div>
-    <div v-else-if="id===30">
-      <!-- Fyber -->
-      <om-form
-        :form="form"
-        label="App ID"
-        :msg="$msg('appsettings.app_id')"
-        :edit="canEdit"
-        field="adnAppKey"
-      />
+    <template v-if="false">
+      <div v-if="id===1">
+        <!-- AdTiming -->
+        <om-form
+          :form="form"
+          label="App Key"
+          :msg="$msg('appsettings.app_key')"
+          :edit="canEdit"
+          field="adnAppKey"
+        />
+      </div>
+      <div v-else-if="id===2">
+        <!-- AdMob -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.admob_app_id_tip')" />
+      </div>
+      <div v-else-if="id===3">
+        <!-- facebook -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.facebook_app_id_tip')" />
+        <om-form
+          :form="form"
+          label="System User Access Token"
+          :msg="$msg('appsettings.system_user_access_token')"
+          :edit="canEdit"
+          field="refreshToken"
+          :tip="$msg('appsettings.facebook_system_user_access_token_tip')" />
+      </div>
+      <div v-else-if="id===4">
+        <!-- UnityAds -->
+        <om-form
+          :form="form"
+          label="Game ID"
+          :msg="$msg('appsettings.game_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.unity_game_id_tip')" />
+      </div>
+      <div v-else-if="id===5">
+        <!-- Vungle -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.vungle_app_id_tip')" />
+      </div>
+      <div v-else-if="id===6">
+        <!-- TencentAds -->
+        <om-form
+          :form="form"
+          label="APP ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.gdt_app_id_tip')" />
+      </div>
+      <div v-else-if="id===7">
+        <!-- AdColony -->
+        <om-form
+          :form="form"
+          label="APP ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.adcolony_app_id_tip')" />
+      </div>
+      <div v-else-if="id===8">
+        <!-- AppLovin -->
+        <om-form
+          :form="form"
+          label="SDK Key"
+          :msg="$msg('appsettings.sdk_key')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.applovin_sdk_key_tip')" />
+      </div>
+      <div v-else-if="id===9">
+        <!-- Mopub -->
+      </div>
+      <div v-else-if="id===11">
+        <!-- Tapjoy -->
+        <om-form
+          :form="form"
+          label="SDK Key"
+          :msg="$msg('appsettings.sdk_key')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.tapjoy_sdk_key_tip')" />
+      </div>
+      <div v-else-if="id===12">
+        <!-- Chartboost -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="cb_left"
+          :tip="$msg('appsettings.chartboost_app_id_tip')" />
+        <om-form
+          :form="form"
+          label="App Signature"
+          :msg="$msg('appsettings.app_signature')"
+          :edit="canEdit"
+          field="cb_right"
+          :tip="$msg('appsettings.chartboost_app_signature_tip')" />
+      </div>
+      <div v-else-if="id===13">
+        <!-- Pangle -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :tip="$msg('appsettings.pangle_app_id_tip')"
+          :edit="canEdit"
+          field="adnAppKey"
+        />
+      </div>
+      <div v-else-if="id===14">
+        <!-- Mintegral -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :tip="$msg('appsettings.mintegral_app_id_tip')"
+          :edit="canEdit"
+          field="cb_left"
+        />
+        <om-form
+          :form="form"
+          label="App Key"
+          :msg="$msg('appsettings.app_key')"
+          :tip="$msg('appsettings.mintegral_app_key_tip')"
+          :edit="canEdit"
+          field="cb_right"
+        />
+      </div>
+      <div v-else-if="id===15">
+        <!-- IronSource -->
+        <om-form
+          :form="form"
+          label="App Key"
+          :msg="$msg('appsettings.app_key')"
+          :edit="canEdit"
+          field="adnAppKey"
+          :tip="$msg('appsettings.ironsource_app_key_tip')" />
+      </div>
+      <div v-else-if="id===16">
+        <!-- MyTarget -->
+      </div>
+      <div v-else-if="id===17">
+        <!-- Helium ChartboostBid -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="cb_left"
+          :tip="$msg('appsettings.chartboost_app_id_tip')" />
+        <om-form
+          :form="form"
+          label="App Signature"
+          :msg="$msg('appsettings.app_signature')"
+          :edit="canEdit"
+          field="cb_right"
+          :tip="$msg('appsettings.chartboost_app_signature_tip')" />
+      </div>
+      <div v-else-if="id===18">
+        <!-- xiaomi -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="cb_left" />
+        <om-form
+          :form="form"
+          label="App Secret"
+          :edit="canEdit"
+          field="cb_right" />
+      </div>
+      <div v-else-if="id===30">
+        <!-- Fyber -->
+        <om-form
+          :form="form"
+          label="App ID"
+          :msg="$msg('appsettings.app_id')"
+          :edit="canEdit"
+          field="adnAppKey"
+        />
+      </div>
+    </template>
+    <div v-else>
+      <om-form label="adnAppKey" :form="form" :fill="false" :edit="canEdit" field="adnAppKey" />
+      <om-form label="apiKey" :form="form" :fill="false" :edit="canEdit" field="apiKey" />
+      <om-form label="clientId" :form="form" :fill="false" :edit="canEdit" field="clientId" />
+      <om-form label="clientSecret" :form="form" :fill="false" :edit="canEdit" field="clientSecret" />
+      <om-form label="reportAppId" :form="form" :fill="false" :edit="canEdit" field="reportAppId" />
+      <om-form label="refreshToken" :form="form" :fill="false" :edit="canEdit" field="refreshToken" />
     </div>
     <div v-if="![ 3, 6 ].includes(id)">
       <a-tabs @change="changeAccountType" :default-active-key="activeKey" size="small" :tabBarGutter="8" type="card">
