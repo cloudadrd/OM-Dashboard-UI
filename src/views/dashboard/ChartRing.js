@@ -112,7 +112,7 @@ export default {
           label: {
             type: 'inner',
             formatter (text, item) {
-              return `${item._origin.x}: ${numerify(item._origin.y, '$0,0a')}`
+              return `${item._origin.x}: ${numerify(item._origin.y, '￥0,0a')}`
             }
           },
           tooltip: {
