@@ -48,7 +48,7 @@
             :height="248"
             x-column="day"
             y-column="ecpm"
-            y-format="$0a[.]00"
+            y-format="￥0a[.]00"
             :group-by="chartGroupViewDim" />
         </a-col>
       </a-row>
@@ -61,7 +61,7 @@
             :height="248"
             x-column="day"
             y-column="revenue"
-            y-format="$0a[.]00"
+            y-format="￥0a[.]00"
             :group-by="chartGroupViewDim" />
         </a-col>
         <a-col :span="12">

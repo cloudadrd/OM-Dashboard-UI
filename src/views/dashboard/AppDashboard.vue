@@ -22,7 +22,7 @@
         :xTickCount="7"
         x-column="day"
         y-column="cost"
-        y-format="$0,0.00"
+        y-format="￥0,0.00"
         group-by="country" />
       <om-chart-ring
         class="right"
@@ -31,7 +31,7 @@
         :height="350"
         x-column="country"
         y-column="cost"
-        y-format="$0,0.00" />
+        y-format="￥0,0.00" />
     </div>
     <div class="ds-bottom">
       <a-select
@@ -48,10 +48,10 @@
             <div class="title">Performance</div>
             <a-row :gutter="32">
               <a-col :span="12">
-                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="Revenue" y-column="cost" y-format="$0,0.00a" />
+                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="Revenue" y-column="cost" y-format="￥0,0.00a" />
               </a-col>
               <a-col :span="12">
-                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="eCPM" y-column="ecpm" y-format="$0.00a"/>
+                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="eCPM" y-column="ecpm" y-format="￥0.00a"/>
               </a-col>
             </a-row>
             <a-row :gutter="32">
@@ -99,7 +99,7 @@
                   y-column="dau" />
               </a-col>
               <a-col :span="12">
-                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="ARPDAU" y-column="arpDau" y-format="$0.000a"/>
+                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="ARPDAU" y-column="arpDau" y-format="￥0.000a"/>
               </a-col>
             </a-row>
             <a-row :gutter="32">
@@ -113,7 +113,7 @@
                   y-column="deu" />
               </a-col>
               <a-col :span="12">
-                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="ARPDEU" y-column="arpDeu" y-format="$0.000a"/>
+                <om-ds-bottom-chart :data="bottom.chartData" :sum="bottom.sumData" title="ARPDEU" y-column="arpDeu" y-format="￥0.000a"/>
               </a-col>
             </a-row>
             <a-row :gutter="32">
@@ -231,7 +231,7 @@ export default {
         .then(res => {
           if (!res.code) {
             const { yesterdayRevenue, lastSevenDayRevenue, currentMonthRevenue, lastMonthRevenue } = res.data
-            const format = '$0,0.00'
+            const format = '￥0,0.00'
             this.headRevenueData = {
               'Yesterday': numerify(yesterdayRevenue, format),
               'Last 7 days': numerify(lastSevenDayRevenue, format),

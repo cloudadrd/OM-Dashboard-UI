@@ -48,7 +48,7 @@
             :height="248"
             x-column="day"
             y-column="ecpm"
-            y-format="$0a[.]00"
+            y-format="￥0a[.]00"
             :group-by="chartGroupViewDim" />
         </a-col>
       </a-row>
@@ -61,7 +61,7 @@
             :height="248"
             x-column="day"
             y-column="cost"
-            y-format="$0a[.]00"
+            y-format="￥0a[.]00"
             :group-by="chartGroupViewDim" />
         </a-col>
         <a-col :span="12">
@@ -292,8 +292,8 @@ export default {
         sdkClick: { title: 'Clicks', sort: 10 },
         ctr: { title: 'API CTR', sort: 11, format: '0.00 %' },
         sdkCtr: { title: 'CTR', sort: 12, format: '0.00 %' },
-        ecpm: { title: 'eCPM', sort: 13, format: '$ 0,0.00' },
-        cost: { title: 'Revenue', sort: 15, format: '$ 0,0.00' },
+        ecpm: { title: 'eCPM', sort: 13, format: '￥ 0,0.00' },
+        cost: { title: 'Revenue', sort: 15, format: '￥ 0,0.00' },
         isReady: { title: 'Ad-Availability Check', sort: 16 },
         isReadyTrue: { title: 'Ad-Availability Response', sort: 17 },
         readyRate: { title: 'Ad-Availability Rate', format: '0.00 %', sort: 18 },
@@ -366,8 +366,8 @@ export default {
         sdkClick: { title: 'Clicks', sort: 10 },
         ctr: { title: 'API CTR', sort: 11, format: '0.00 %' },
         sdkCtr: { title: 'CTR', sort: 12, format: '0.00 %' },
-        ecpm: { title: 'eCPM', sort: 13, format: '$ 0,0.00' },
-        cost: { title: 'Revenue', sort: 15, format: '$ 0,0.00' },
+        ecpm: { title: 'eCPM', sort: 13, format: '￥ 0,0.00' },
+        cost: { title: 'Revenue', sort: 15, format: '￥ 0,0.00' },
         videoStart: { title: 'Video Start', sort: 19, format: '0,0' },
         videoCompletion: { title: 'Video Completions', sort: 20, format: '0,0' }
       }
@@ -428,8 +428,8 @@ export default {
           sdkClick: { title: 'Clicks', sort: 10 },
           ctr: { title: 'API CTR', sort: 11, format: '0.00 %' },
           sdkCtr: { title: 'CTR', sort: 12, format: '0.00 %' },
-          ecpm: { title: 'eCPM', sort: 13, format: '$ 0,0.00' },
-          cost: { title: 'Revenue', sort: 15, format: '$ 0,0.00' },
+          ecpm: { title: 'eCPM', sort: 13, format: '￥ 0,0.00' },
+          cost: { title: 'Revenue', sort: 15, format: '￥ 0,0.00' },
           videoStart: { title: 'Video Start', sort: 19, format: '0,0' },
           videoCompletion: { title: 'Video Completions', sort: 20, format: '0,0' }
         }
@@ -455,8 +455,8 @@ export default {
           sdkClick: { title: 'Clicks', sort: 10 },
           ctr: { title: 'API CTR', sort: 11, format: '0.00 %' },
           sdkCtr: { title: 'CTR', sort: 12, format: '0.00 %' },
-          ecpm: { title: 'eCPM', sort: 13, format: '$ 0,0.00' },
-          cost: { title: 'Revenue', sort: 15, format: '$ 0,0.00' },
+          ecpm: { title: 'eCPM', sort: 13, format: '￥ 0,0.00' },
+          cost: { title: 'Revenue', sort: 15, format: '￥ 0,0.00' },
           isReady: { title: 'Ad-Availability Check', sort: 16 },
           isReadyTrue: { title: 'Ad-Availability Response', sort: 17 },
           readyRate: { title: 'Ad-Availability Rate', format: '0.00 %', sort: 18 },
@@ -471,8 +471,8 @@ export default {
           sdkClick: { title: 'Clicks', sort: 10 },
           ctr: { title: 'API CTR', sort: 11, format: '0.00 %' },
           sdkCtr: { title: 'CTR', sort: 12, format: '0.00 %' },
-          ecpm: { title: 'eCPM', sort: 13, format: '$ 0,0.00' },
-          cost: { title: 'Revenue', sort: 15, format: '$ 0,0.00' },
+          ecpm: { title: 'eCPM', sort: 13, format: '￥ 0,0.00' },
+          cost: { title: 'Revenue', sort: 15, format: '￥ 0,0.00' },
           isReady: { title: 'Ad-Availability Check', sort: 16 },
           isReadyTrue: { title: 'Ad-Availability Response', sort: 17 },
           readyRate: { title: 'Ad-Availability Rate', format: '0.00 %', sort: 18 },

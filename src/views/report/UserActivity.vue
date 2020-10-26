@@ -47,7 +47,7 @@
             :height="248"
             x-column="day"
             y-column="arpDau"
-            y-format="$0.[0000]"
+            y-format="￥0.[0000]"
             :group-by="chartGroupViewDim" />
         </a-col>
         <a-col :span="8">
@@ -81,7 +81,7 @@
             :height="248"
             x-column="day"
             y-column="arpDeu"
-            y-format="$0.[0000]"
+            y-format="￥0.[0000]"
             :group-by="chartGroupViewDim" />
         </a-col>
         <a-col :span="8">
@@ -214,10 +214,10 @@ export default {
       country: [],
       supportedMetrics: {
         dau: { title: 'DAU' },
-        arpDau: { title: 'ARPDAU', format: '$0.[0000]' },
+        arpDau: { title: 'ARPDAU', format: '￥0.[0000]' },
         imprDau: { title: 'Impressions / DAU', format: '0.00' },
         deu: { title: 'DEU' },
-        arpDeu: { title: 'ARPDEU', format: '$0.[0000]' },
+        arpDeu: { title: 'ARPDEU', format: '￥0.[0000]' },
         imprDeu: { title: 'Impressions / DEU', format: '0.00' },
         engagementRate: { title: 'Engagement Rate', format: '0.00 %' }
       },
