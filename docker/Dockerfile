@@ -1,7 +1,7 @@
 FROM adtiming/ombuilder as builder
 ARG DSUI_URL="https://github.com/AdTiming/OM-Dashboard-UI.git"
 ARG DSUI_DIR="OM-Dashboard-UI"
-RUN git clone ${DSUI_URL} && \
+RUN git clone -b ww ${DSUI_URL} && \
     cd ${DSUI_DIR} && \
     yarn install && \
     yarn run build
