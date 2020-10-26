@@ -5,7 +5,7 @@
 # docker build --no-cache -t xuanxinhuiqing/omnginx .
 
 
-docker build -t xuanxinhuiqing/omnginx-v2 .
+docker build --no-cache -t xuanxinhuiqing/omnginx-v2 .
 
 
 node -v
