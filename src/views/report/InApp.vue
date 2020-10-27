@@ -271,9 +271,9 @@ export default {
         win: { title: 'Win', format: '0,0' },
         winRate: { title: 'Win rate', format: '0.00 %' },
         impr: { title: 'Impressions', format: '0,0' },
-        // winPrice: { title: 'Revenue', format: '$ 0,0.00' },
-        revenue: { title: 'Revenue', format: '$ 0,0.00' },
-        ecpm: { title: 'eCPM', format: '$ 0,0.00' }
+        // winPrice: { title: 'Revenue', format: '￥ 0,0.00' },
+        revenue: { title: 'Revenue', format: '￥ 0,0.00' },
+        ecpm: { title: 'eCPM', format: '￥ 0,0.00' }
       },
       dimList4Chart: this.filterDim('pubAppId', 'country', 'adnId'),
       dimList4Table: this.filterDim('day', 'hour', 'pubAppId', 'country', 'adType', 'placementId', 'adnId', 'instanceId'),

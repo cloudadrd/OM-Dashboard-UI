@@ -99,7 +99,7 @@
                 <td>
                   <span :style="item.priority >0 ? null: 'opacity: 0.3;' ">
                     <a-tooltip :title="toolTip">
-                      <div>{{ f(item.ecpm,'$ 0,0.00') }}</div>
+                      <div>{{ f(item.ecpm,'￥ 0,0.00') }}</div>
                       <div :style="item.ecpm>=item.ecpm2|| item.ecpmGrowth === '--'?'color: #18921D;padding-top: 4px;':'color: #D5432F;padding-top: 4px;'">{{ item.ecpmGrowth }}</div>
                     </a-tooltip>
                   </span>
