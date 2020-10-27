@@ -41,7 +41,7 @@
         <a-input-number
           style="width:100%"
           type="number"
-          :min="2"
+          :min="1"
           :max="20"
           v-decorator="['inventoryCount', { rules: [{ required: true, message: 'Pool Size can not be empty.'}] }]"/>
       </om-form>

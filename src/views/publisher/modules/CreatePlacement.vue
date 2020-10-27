@@ -14,14 +14,14 @@
                 </om-form>
                 <om-form :form="form" label="Type" :showTip="false">
                   <a-form-item v-if="editType==='Edit' || editType === 'Details'">
-                    <div v-if="mdl.adType===2" :class="mdl.adType===2? 'item-main-selected': 'item-main'">
+                    <div v-if="mdl.adType===2" @click="handleTypeChance(2)" :class="mdl.adType===2? 'item-main-selected': 'item-main'">
                       <img class="item-icon" src="/icon/placement/video-blue.svg" style="width: 30px;height: 55.5px;">
                       <div class="item-content">
                         <div class="item-title"><span style="margin-right: 10px;">Rewarded Video</span></div>
                         <div class="item-desc">Rewarded Video ad rewards your users with valuable virtual item in exchange for a completed view.</div>
                       </div>
                     </div>
-                    <div v-if="mdl.adType===3" :class="mdl.adType===3? 'item-main-selected': 'item-main'" style="margin: 0 0px 16px 0;">
+                    <div v-if="mdl.adType===3" @click="handleTypeChance(3)" :class="mdl.adType===3? 'item-main-selected': 'item-main'" style="margin: 0 0px 16px 0;">
                       <img class="item-icon" src="/icon/placement/int-blue.svg" style="width: 30px;height: 55.5px;">
                       <div class="item-content">
                         <div class="item-title"><span style="margin-right: 10px;">Interstitial</span></div>
@@ -278,9 +278,9 @@ export default {
       .then(res => {
         res.data.forEach(item => {
           if (item.adType === 3) {
-            this.hasInterstitial = true
+            // this.hasInterstitial = true
           } else if (item.adType === 2) {
-            this.hasRv = true
+            // this.hasRv = true
           }
         })
         if (this.placementId > 0) {
