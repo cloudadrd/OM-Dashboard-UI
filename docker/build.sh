@@ -4,6 +4,8 @@
 # docker build --no-cache -t cloudadrd/omnginx .
 # docker build --no-cache -t xuanxinhuiqing/omnginx .
 
+aws ecr get-login-password --region cn-north-1 | docker login --username AWS --password-stdin 684017757328.dkr.ecr.cn-north-1.amazonaws.com.cn
+
 
 docker build --no-cache -t xuanxinhuiqing/omnginx-v2 .
 

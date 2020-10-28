@@ -86,8 +86,8 @@ const vueConfig = {
       '/api': {
         // target: 'http://127.0.0.1:19013',
         // target: 'https://mda.adsgreat.cn',
-        // target: 'http://172.31.1.87:19013',
-        target: 'http://mda-v2.adsgreat.cn',
+        target: 'http://172.31.1.12:19013',
+        // target: 'http://mda-v2.adsgreat.cn',
         ws: false,
         changeOrigin: true
       }
