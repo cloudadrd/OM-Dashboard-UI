@@ -22,8 +22,6 @@
           style="width:100%"
           ref="iap-min"
           type="number"
-          :min="1"
-          :max="5"
           v-decorator="['batchSize', { rules: [{ required: true, message: 'Pool Size can not be empty.'}] }]"/>
       </om-form>
       <om-form :form="form" label="Preload Timeout(s)" field="preloadTimeout" tip="Preload Timeout(s)" >
@@ -31,8 +29,6 @@
           style="width:100%"
           ref="iap-min"
           type="number"
-          :min="1"
-          :max="120"
           v-decorator="['preloadTimeout', { rules: [{ required: true, message: 'Pool Size can not be empty.'}] }]"/>
       </om-form>
     </a-card>
@@ -41,8 +37,6 @@
         <a-input-number
           style="width:100%"
           type="number"
-          :min="1"
-          :max="20"
           v-decorator="['inventoryCount', { rules: [{ required: true, message: 'Pool Size can not be empty.'}] }]"/>
       </om-form>
       <om-form :form="form" label="Preload Timeout(s)" field="preloadTimeout" tip="Preload Timeout(s)" >
@@ -50,8 +44,6 @@
           style="width:100%"
           ref="iap-min"
           type="number"
-          :min="1"
-          :max="120"
           v-decorator="['preloadTimeout', { rules: [{ required: true, message: 'Pool Size can not be empty.'}] }]"/>
       </om-form>
       <om-form :form="form" label="Inventory Interval" field="iventoryInterval" tip="Inventory Interval" >
@@ -59,14 +51,12 @@
           style="width:100%"
           ref="iap-min"
           type="number"
-          :min="30"
           v-decorator="['inventoryInterval', { rules: [{ required: true, message: 'Inventory Interval can not be empty.'}] }]"/>
       </om-form>
       <om-form :form="form" label="Max Concurrency" field="batchSize" tip="Max Concurrency">
         <a-input-number
           style="width:100%"
           type="number"
-          :min="1"
           v-decorator="['batchSize', { rules: [{ required: true, message: 'Max Concurrency can not be empty.'}] }]"/>
       </om-form>
     </a-card>
