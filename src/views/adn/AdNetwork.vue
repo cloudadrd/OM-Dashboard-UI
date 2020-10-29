@@ -164,6 +164,13 @@ export default {
       },
       columns: [
         {
+          title: 'ID',
+          dataIndex: 'id',
+          // fixed: 'left',
+          width: '10%',
+          scopedSlots: { customRender: 'id' }
+        },
+        {
           title: 'Ad Network',
           dataIndex: 'className',
           // fixed: 'left',
@@ -179,7 +186,7 @@ export default {
         {
           title: 'Report API Status',
           dataIndex: 'accountStatus',
-          width: '20%',
+          width: '10%',
           scopedSlots: { customRender: 'accountStatus' }
         },
         {

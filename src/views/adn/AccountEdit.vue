@@ -280,6 +280,15 @@
         field="userSignature"
       />
     </div>
+    <div v-else>
+      <om-form
+        :form="form"
+        label="API Token"
+        :msg="$msg('account.api_token')"
+        :edit="canEdit"
+        field="adnAppToken"
+      />
+    </div>
   </div>
 </template>
 <script>
