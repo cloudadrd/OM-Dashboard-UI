@@ -7,8 +7,10 @@
         <div @click="change(item.id)" v-if="![4,9,11,12,13,14,15,17,30].includes(id)" class="account-info-box" :style="edit? 'cursor: pointer;': 'opacity: 0.5;'">
           <a-row :gutter="8" style="text-align: left">
             <a-col :span="18">
-              <div class="account-title">{{ accountMap[id].t1 }}</div>
-              <div class="account-value">{{ item[accountMap[id].v1] }}</div>
+              <!-- <div class="account-title">{{ accountMap[id].t1 }}</div>
+              <div class="account-value">{{ item[accountMap[id].v1] }}</div> -->
+              <div class="account-title">API Token</div>
+              <div class="account-value">{{ item.adnAppToken }}</div>
             </a-col>
             <a-col :span="6">
               <a v-if="index===0 && curAccountId" @click="editAccount" style="position: absolute;top: -40px;right: -10px;"><img src="/icon/Edit.svg"> Edit API Key</a>
@@ -32,12 +34,14 @@
         <div @click="change(item.id)" v-else class="account-info-box2" :style="edit? 'cursor: pointer;': 'opacity: 0.5;'">
           <a-row :gutter="8" style="text-align: left">
             <a-col :span="11">
-              <div class="account-title">{{ accountMap[id].t1 }}</div>
-              <div class="account-value">{{ item[accountMap[id].v1] }}</div>
+              <!-- <div class="account-title">{{ accountMap[id].t1 }}</div>
+              <div class="account-value">{{ item[accountMap[id].v1] }}</div> -->
+              <div class="account-title">API Token</div>
+              <div class="account-value">{{ item.adnAppToken }}</div>
             </a-col>
             <a-col :span="9">
-              <div class="account-title">{{ accountMap[id].t2 }}</div>
-              <div class="account-value">{{ item[accountMap[id].v2] }}</div>
+              <!-- <div class="account-title">{{ accountMap[id].t2 }}</div>
+              <div class="account-value">{{ item[accountMap[id].v2] }}</div> -->
             </a-col>
             <a-col :span="4">
               <a v-if="index===0 && curAccountId" @click="editAccount" style="position: absolute;top: -40px;right: -10px;"><img src="/icon/Edit.svg"> Edit API Key</a>
