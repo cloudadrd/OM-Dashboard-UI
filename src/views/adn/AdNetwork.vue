@@ -292,7 +292,7 @@ export default {
           if ([12, 14, 17, 18].includes(record.id) && values['cb_left']) {
             values.adnAppKey = values['cb_left'].trim() + '#' + values['cb_right'].trim()
           }
-          if (_this.accountTab === '2' && ![3, 6].includes(record.id) && !_this.curAccountId) {
+          if (_this.accountTab === '2' && ![3, 6].includes(record.id) && !_this.curAccountId && record.id < 17) {
             this.$notification.warning({
               message: 'Error',
               description: 'Please Select An API Key.'
