@@ -160,7 +160,7 @@
     <div v-else-if="id===16">
       <!-- MyTarget -->
     </div>
-    <div v-else-if="id===17">
+    <div v-else-if="id===17000">
       <!-- Helium ChartboostBid -->
       <om-form
         :form="form"
@@ -177,7 +177,7 @@
         field="cb_right"
         :tip="$msg('appsettings.chartboost_app_signature_tip')" />
     </div>
-    <div v-else-if="id===18">
+    <div v-else-if="id===18000">
       <!-- xiaomi -->
       <om-form
         :form="form"
@@ -191,7 +191,7 @@
         :edit="canEdit"
         field="cb_right" />
     </div>
-    <div v-else-if="id===30">
+    <div v-else-if="id===30000">
       <!-- Fyber -->
       <om-form
         :form="form"
