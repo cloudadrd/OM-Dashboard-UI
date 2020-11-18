@@ -4,11 +4,12 @@
     <a-row v-for="(item, index) in options" :key="item.id">
       <a-col :span="4"></a-col>
       <a-col :span="16" style="text-align: center;">
-        <div @click="change(item.id)" v-if="![4,9,11,12,13,14,15,17,30].includes(id)" class="account-info-box" :style="edit? 'cursor: pointer;': 'opacity: 0.5;'">
+        <!-- <div @click="change(item.id)" v-if="![4,9,11,12,13,14,15,17,30].includes(id)" class="account-info-box" :style="edit? 'cursor: pointer;': 'opacity: 0.5;'"> -->
+        <div @click="change(item.id)" v-if="![4,9,11,12,13,14,15].includes(id)" class="account-info-box" :style="edit? 'cursor: pointer;': 'opacity: 0.5;'">
           <a-row :gutter="8" style="text-align: left">
             <a-col :span="18">
-              <div class="account-title">{{ accountMap[id].t1 }}</div>
-              <div class="account-value">{{ item[accountMap[id].v1] }}</div>
+              <div class="account-title">{{ handleVal(id, 't1') }}</div>
+              <div class="account-value">{{ item[handleVal(id, 'v1')] }}</div>
             </a-col>
             <a-col :span="6">
               <a v-if="index===0 && curAccountId" @click="editAccount" style="position: absolute;top: -40px;right: -10px;"><img src="/icon/Edit.svg"> Edit API Key</a>
@@ -32,12 +33,12 @@
         <div @click="change(item.id)" v-else class="account-info-box2" :style="edit? 'cursor: pointer;': 'opacity: 0.5;'">
           <a-row :gutter="8" style="text-align: left">
             <a-col :span="11">
-              <div class="account-title">{{ accountMap[id].t1 }}</div>
-              <div class="account-value">{{ item[accountMap[id].v1] }}</div>
+              <div class="account-title">{{ handleVal(id, 't1') }}</div>
+              <div class="account-value">{{ item[handleVal(id, 'v1')] }}</div>
             </a-col>
             <a-col :span="9">
-              <div class="account-title">{{ accountMap[id].t2 }}</div>
-              <div class="account-value">{{ item[accountMap[id].v2] }}</div>
+              <div class="account-title">{{ handleVal(id, 't2') }}</div>
+              <div class="account-value">{{ item[handleVal(id, 'v2')] }}</div>
             </a-col>
             <a-col :span="4">
               <a v-if="index===0 && curAccountId" @click="editAccount" style="position: absolute;top: -40px;right: -10px;"><img src="/icon/Edit.svg"> Edit API Key</a>
@@ -104,6 +105,7 @@ export default {
   },
   data () {
     const accountMap = {
+      default: { t1: 'API Token', v1: 'adnAppToken', t2: 'API Token', v2: 'adnAppToken' },
       1: { t1: 'API Token', v1: 'adnAppToken' },
       2: { t1: 'Publisher ID', v1: 'userId' },
       4: { t1: 'Monetization Stats API key', v1: 'adnApiKey', t2: 'Organization core ID', v2: 'userId' },
@@ -146,6 +148,10 @@ export default {
         path: '/adn/account',
         query: { id: this.curAccountId }
       })
+    },
+    handleVal (id, name) {
+      if (this.accountMap[id]) return this.accountMap[id][name]
+      return this.accountMap.default[name]
     }
   }
 }

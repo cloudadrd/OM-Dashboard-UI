@@ -209,7 +209,7 @@
       <om-form label="reportAppId" :form="form" :fill="false" :edit="canEdit" field="reportAppId" />
       <om-form label="refreshToken" :form="form" :fill="false" :edit="canEdit" field="refreshToken" />
     </div>
-    <div v-if="![ 3, 6 ].includes(id) && id < 17">
+    <div v-if="![ 3, 6 ].includes(id)">
       <a-tabs @change="changeAccountType" :default-active-key="activeKey" size="small" :tabBarGutter="8" type="card">
         <span slot="tabBarExtraContent">
           <img style="margin-right:4px;" src="/assets/Vector.svg"> Ad Network API key
