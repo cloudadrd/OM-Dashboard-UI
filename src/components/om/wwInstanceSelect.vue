@@ -8,7 +8,10 @@
       size="default"
       :allowClear="allowClear"
       :disabled="disabled"
-      :mode="mode"
+      mode="multiple"
+      :maxTagCount="1"
+      :maxTagTextLength="7"
+      :maxTagPlaceholder="(h,vm) => '+' + (vm.value.length - 1)"
       :showArrow="!allowClear"
       optionLabelProp="title"
       :dropdownMatchSelectWidth="false"
@@ -103,7 +106,7 @@ export default {
       if (!this.data || this.data.length === 0) {
         // const params = { pubAppId, placementId: this.placementId }
         const params = {}
-        params.adNetworkAppId = this.adnAppId.join(',')
+        params.pubAppId = this.adnAppId.join(',')
         params.placementId = this.placementId.join(',')
         params.adNetworkIds = this.adnIds.join(',')
         instancesSelectList(params).then(res => {
@@ -118,7 +121,7 @@ export default {
       // const { searchApp: pubAppId } = this.$store.state.publisher
       // const params = { pubAppId, placementId: this.placementId }
       const params = {}
-      params.adNetworkAppId = this.adnAppId.join(',')
+      params.pubAppId = this.adnAppId.join(',')
       params.placementId = this.placementId.join(',')
       params.adNetworkIds = this.adnIds.join(',')
       instancesSelectList(params).then(res => {
@@ -132,7 +135,7 @@ export default {
       // const { searchApp: pubAppId } = this.$store.state.publisher
       // const params = { pubAppId, placementId: this.placementId }
       const params = {}
-      params.adNetworkAppId = this.adnAppId.join(',')
+      params.pubAppId = this.adnAppId.join(',')
       params.placementId = this.placementId.join(',')
       params.adNetworkIds = this.adnIds.join(',')
       instancesSelectList(params).then(res => {
