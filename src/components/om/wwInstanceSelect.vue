@@ -99,11 +99,11 @@ export default {
     },
     setOptions () {
       console.log('setOptions')
-      const { searchApp: pubAppId } = this.$store.state.publisher
+      // const { searchApp: pubAppId } = this.$store.state.publisher
       if (!this.data || this.data.length === 0) {
-        const params = { pubAppId, placementId: this.placementId }
+        // const params = { pubAppId, placementId: this.placementId }
+        const params = {}
         params.adNetworkAppId = this.adnAppId.join(',')
-        params.adnIds = this.adnIds.join(',')
         params.placementId = this.placementId.join(',')
         params.adNetworkIds = this.adnIds.join(',')
         instancesSelectList(params).then(res => {
@@ -115,10 +115,10 @@ export default {
     },
     resetOptions () {
       console.log('resetOptions')
-      const { searchApp: pubAppId } = this.$store.state.publisher
-      const params = { pubAppId, placementId: this.placementId }
+      // const { searchApp: pubAppId } = this.$store.state.publisher
+      // const params = { pubAppId, placementId: this.placementId }
+      const params = {}
       params.adNetworkAppId = this.adnAppId.join(',')
-      params.adnIds = this.adnIds.join(',')
       params.placementId = this.placementId.join(',')
       params.adNetworkIds = this.adnIds.join(',')
       instancesSelectList(params).then(res => {
@@ -129,10 +129,10 @@ export default {
     },
     upload () {
       console.log('upload')
-      const { searchApp: pubAppId } = this.$store.state.publisher
-      const params = { pubAppId, placementId: this.placementId }
+      // const { searchApp: pubAppId } = this.$store.state.publisher
+      // const params = { pubAppId, placementId: this.placementId }
+      const params = {}
       params.adNetworkAppId = this.adnAppId.join(',')
-      params.adnIds = this.adnIds.join(',')
       params.placementId = this.placementId.join(',')
       params.adNetworkIds = this.adnIds.join(',')
       instancesSelectList(params).then(res => {
