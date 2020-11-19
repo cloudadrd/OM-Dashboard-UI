@@ -35,7 +35,7 @@
 
 <script>
 import { Ellipsis } from '../../components'
-import { instancesSelectList } from '../../api/mediation'
+import { instancesSelectLists } from '../../api/mediation'
 import { mapState } from 'vuex'
 
 export default {
@@ -109,7 +109,7 @@ export default {
         params.pubAppId = this.adnAppId.join(',')
         params.placementId = this.placementId.join(',')
         params.adNetworkIds = this.adnIds.join(',')
-        instancesSelectList(params).then(res => {
+        instancesSelectLists(params).then(res => {
           if (res.code === 0) {
             this.data = res.data
           }
@@ -124,7 +124,7 @@ export default {
       params.pubAppId = this.adnAppId.join(',')
       params.placementId = this.placementId.join(',')
       params.adNetworkIds = this.adnIds.join(',')
-      instancesSelectList(params).then(res => {
+      instancesSelectLists(params).then(res => {
         if (res.code === 0) {
           this.data = res.data
         }
@@ -138,7 +138,7 @@ export default {
       params.pubAppId = this.adnAppId.join(',')
       params.placementId = this.placementId.join(',')
       params.adNetworkIds = this.adnIds.join(',')
-      instancesSelectList(params).then(res => {
+      instancesSelectLists(params).then(res => {
         if (res.code === 0) {
           this.data = res.data
         }

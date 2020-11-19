@@ -15,6 +15,7 @@ const api = {
   instancesCreate: '/instance/create',
   getInstance: '/instance/get',
   instancesSelectList: '/instance/select/list',
+  instancesSelectLists: '/instance/select/list2',
   segmentList: '/mediation/segment/list',
   segmentGet: '/mediation/segment/get',
   segmentUpdate: '/mediation/segment/update',
@@ -147,6 +148,13 @@ export function segmentList (params) {
 export function instancesSelectList (params) {
   return axios({
     url: api.instancesSelectList,
+    method: 'get',
+    params: params
+  })
+}
+export function instancesSelectLists (params) {
+  return axios({
+    url: api.instancesSelectLists,
     method: 'get',
     params: params
   })
