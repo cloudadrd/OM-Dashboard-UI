@@ -2,12 +2,13 @@
 <template>
   <div>
     <a-form layout="inline" :form="form" >
-      <om-pub-app-select :defaultValue="def.defaultApps" @change="appSelect" width="240px"/>
+      <om-ad-network-select :defaultValue="def.defaultAdns" @change="adnSelect" width="185px"/>
       <a-form-item>
         <om-regions-select :defaultSelected="def.defaultRegions" :maxTagCount="1" :ignoreApp="true" @change="countryChange" style="width: 154px"/>
       </a-form-item>
-      <om-placement-select-simple :pubAppIds="pubAppIds" :defaultValue="def.defaultPlacements" :form="form" width="225px"/>
-      <om-ad-network-select :defaultValue="def.defaultAdns" width="185px"/>
+      <om-pub-app-select :defaultValue="def.defaultApps" @change="appSelect" width="240px"/>
+      <om-placement-select-simple :pubAppIds="pubAppIds" :defaultValue="def.defaultPlacements" :form="form" @change="placementSelect" width="225px"/>
+      <om-instance-select ref="insselect" :adnAppId="pubAppIds" :adnIds="adnIds" :placementId="placementsIds"/>
       <a-form-item>
         <a-button ghost @click="handleApply" type="primary" style="width: 84px;">Apply</a-button>
       </a-form-item>
@@ -188,6 +189,7 @@ import numerify from 'numerify'
 import numerifyCurrency from 'numerify/lib/plugins/currency.es'
 import numerifyPercent from 'numerify/lib/plugins/percent.es'
 import { mapState } from 'vuex'
+import OmInstanceSelect from '@/components/om/wwInstanceSelect'
 numerify.register('currency', numerifyCurrency)
 numerify.register('percent', numerifyPercent)
 
@@ -225,7 +227,8 @@ export default {
     OmRegionsSelect,
     OmPlacementSelectSimple,
     Ellipsis,
-    Tip
+    Tip,
+    OmInstanceSelect
   },
   computed: {
     chartGroupViewDim () {
@@ -240,6 +243,8 @@ export default {
   },
   data () {
     let pubids = null
+    let placementsids = null
+    let adnids = null
     const def = {
       defaultApps: [],
       defaultRegions: [],
@@ -249,6 +254,7 @@ export default {
       metric: ['impr', 'cost', 'ecpm']
     }
     let lastCondition = localStorage.getItem('condition-p-' + this.$store.state.publisher.currentOrgId)
+    console.log(lastCondition)
     if (lastCondition) {
       lastCondition = JSON.parse(lastCondition)
       const { pubAppId = [], placementId = [], country = [], adnId = [], dimension = ['day'], metric = ['impr', 'cost', 'ecpm'] } = { ...lastCondition }
@@ -259,6 +265,8 @@ export default {
       def.dimension = dimension
       def.metric = metric
       pubids = pubAppId
+      placementsids = placementId
+      adnids = adnId
     }
     let queryPubAppId = this.$route.query.pubAppId
     if (queryPubAppId) {
@@ -273,6 +281,8 @@ export default {
       regions: def.defaultRegions || [],
       country: [],
       pubAppIds: pubids,
+      placementsIds: placementsids,
+      adnIds: adnids,
       metricFields: {
         request: 'waterfallRequest',
         filled: 'waterfallFilled',
@@ -504,7 +514,12 @@ export default {
     },
     appSelect (val) {
       this.pubAppIds = val
-      console.log(val)
+    },
+    placementSelect (val) {
+      this.placementsIds = val
+    },
+    adnSelect (val) {
+      this.adnIds = val
     },
     tableChange (pagination, filters, sorter) {
       this.sorter = sorter
