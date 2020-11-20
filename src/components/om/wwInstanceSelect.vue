@@ -39,7 +39,7 @@ import { instancesSelectLists } from '../../api/mediation'
 import { mapState } from 'vuex'
 
 export default {
-  name: 'OmInstanceSelect',
+  name: 'OmInstanceSelectSimple',
   components: {
     Ellipsis
   },
@@ -66,11 +66,11 @@ export default {
         return []
       }
     },
-    placementId: {
+    placementIds: {
       type: Array,
       default: null
     },
-    adnAppId: {
+    adnAppIds: {
       type: Array,
       default: null
     },
@@ -104,10 +104,10 @@ export default {
       console.log('setOptions')
       // const { searchApp: pubAppId } = this.$store.state.publisher
       if (!this.data || this.data.length === 0) {
-        // const params = { pubAppId, placementId: this.placementId }
+        // const params = { pubAppId, placementIds: this.placementIds }
         const params = {}
-        params.pubAppId = this.adnAppId.join(',')
-        params.placementId = this.placementId.join(',')
+        params.pubAppIds = this.adnAppIds.join(',')
+        params.placementIds = this.placementIds.join(',')
         params.adNetworkIds = this.adnIds.join(',')
         instancesSelectLists(params).then(res => {
           if (res.code === 0) {
@@ -119,10 +119,10 @@ export default {
     resetOptions () {
       console.log('resetOptions')
       // const { searchApp: pubAppId } = this.$store.state.publisher
-      // const params = { pubAppId, placementId: this.placementId }
+      // const params = { pubAppId, placementIds: this.placementIds }
       const params = {}
-      params.pubAppId = this.adnAppId.join(',')
-      params.placementId = this.placementId.join(',')
+      params.pubAppIds = this.adnAppIds.join(',')
+      params.placementIds = this.placementIds.join(',')
       params.adNetworkIds = this.adnIds.join(',')
       instancesSelectLists(params).then(res => {
         if (res.code === 0) {
@@ -133,10 +133,10 @@ export default {
     upload () {
       console.log('upload')
       // const { searchApp: pubAppId } = this.$store.state.publisher
-      // const params = { pubAppId, placementId: this.placementId }
+      // const params = { pubAppId, placementIds: this.placementIds }
       const params = {}
-      params.pubAppId = this.adnAppId.join(',')
-      params.placementId = this.placementId.join(',')
+      params.pubAppIds = this.adnAppIds.join(',')
+      params.placementIds = this.placementIds.join(',')
       params.adNetworkIds = this.adnIds.join(',')
       instancesSelectLists(params).then(res => {
         if (res.code === 0) {
@@ -149,13 +149,13 @@ export default {
     this.setOptions()
   },
   watch: {
-    adnAppId (val) {
+    adnAppIds (val) {
       this.resetOptions()
     },
     adnIds (val) {
       this.resetOptions()
     },
-    placementId (val) {
+    placementIds (val) {
       this.resetOptions()
     },
     searchPlacement (val) {

@@ -8,7 +8,7 @@
       </a-form-item>
       <om-pub-app-select :defaultValue="def.defaultApps" @change="appSelect" width="240px"/>
       <om-placement-select-simple :pubAppIds="pubAppIds" :defaultValue="def.defaultPlacements" :form="form" @change="placementSelect" width="225px"/>
-      <om-instance-select ref="insselect" :adnAppId="pubAppIds" :adnIds="adnIds" :placementId="placementsIds"/>
+      <om-instance-select ref="insselect" :adnAppIds="pubAppIds" :adnIds="adnIds" :placementIds="placementsIds"/>
       <a-form-item>
         <a-button ghost @click="handleApply" type="primary" style="width: 84px;">Apply</a-button>
       </a-form-item>
@@ -254,7 +254,6 @@ export default {
       metric: ['impr', 'cost', 'ecpm']
     }
     let lastCondition = localStorage.getItem('condition-p-' + this.$store.state.publisher.currentOrgId)
-    console.log(lastCondition)
     if (lastCondition) {
       lastCondition = JSON.parse(lastCondition)
       const { pubAppId = [], placementId = [], country = [], adnId = [], dimension = ['day'], metric = ['impr', 'cost', 'ecpm'] } = { ...lastCondition }
